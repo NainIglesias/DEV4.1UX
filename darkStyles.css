@@ -2,6 +2,8 @@ html{
     background-color: black;
 }
 div{
-    background-color: white;
-    color: black;
+    color: white;
+}
+#container{
+    background-color: black;
 }
