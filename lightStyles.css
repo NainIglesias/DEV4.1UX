@@ -1,8 +1,11 @@
-html{
+html,a{
     background-color: white;
+    color:black;
 }
 
 #navigation{
      background-color: white;
 }
-
+#containe, #profile{
+    border-color: black;
+}

@@ -1,9 +1,18 @@
-html{
+html,a{
     background-color: black;
-}
-div{
     color: white;
-}
+}    
+
+
 #navigation{
     background-color: black;
+
+}
+
+#container, #about, #about div{
+    border-color: white;
+}
+#navigation{
+    box-shadow: 0 2px 5px white;
+
 }

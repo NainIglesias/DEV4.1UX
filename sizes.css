@@ -7,22 +7,60 @@ img {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-   
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: top 0.3s;
 }
 #about{
-    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    align-items: center; 
     border: 1px solid black;
     width: 50%;
     height: auto;
     margin: auto;
+    margin-top: 150px;
     padding: 10px;
 }
-
+#profile{
+    height:auto;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+#profile_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+#about div{
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+#about_explicacion{
+    margin-left: 30%;
+    margin-right: 30%;
+}
 .divIcon {
     width: 50px;
     height: 50px;
     margin: 0 10px; 
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+#container{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: row;
+    align-items: center; 
+    border: 1px solid black;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 150px;
+    padding: 10px;
 }
