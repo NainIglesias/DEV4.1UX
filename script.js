@@ -4,7 +4,7 @@ const themeIcon = document.getElementById('themeIcon');
 const informationIcon = document.getElementById('informationIcon');
 const homeIcon = document.getElementById('homeIcon');
 
-
+// Cambio de light/dark themez
 boton.addEventListener("click", () => {
     //alert('¡Soy un botón!');  
     const newCss = colorCss.getAttribute('href') === 'darkStyles.css' ? 'lightStyles.css' : 'darkStyles.css';
@@ -17,3 +17,22 @@ boton.addEventListener("click", () => {
     homeIcon.setAttribute('src',newHomeIcon);
 
 });
+ // Peticiones a la API de monster hunter.
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://mhw-db.com/monsters");
+xhr.responseType = "json";
+let data; 
+xhr.onload = () => {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    data = xhr.response;
+    data.sort(function(a,b){
+        if(a.name > b.name){return 1;}
+        if(a.name < b.name){return -1;}
+        return 0;
+    });
+    console.log(data);
+} else {
+    console.log(`Error: ${xhr.status}`);
+}
+};
+xhr.send();
