@@ -64,3 +64,23 @@ a {
     margin-top: 150px;
     padding: 10px;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    margin-right: auto; /* Empuja los elementos a la izquierda */
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    list-style: none;
+  }

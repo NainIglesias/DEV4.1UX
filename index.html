@@ -4,23 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEV3.1 UX</title>
-   <script src="script.js" defer></script>
-    <link  rel="stylesheet" type="text/css" href="sizes.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="sizes.css">
     <link id="colorStylesCss" rel="stylesheet" type="text/css" href="lightStyles.css">
+    <style>
+        #navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
 
+        #menuIcon {
+            display: none;
+            cursor: pointer;
+        }
+
+        #navMenu {
+            display: none;
+            margin-top: 10px;
+
+        }
+
+        #navMenu a {
+            margin-right: 20px; 
+        }
+
+        @media only screen and (max-width: 600px) {
+            .desktopIcons , #navMenu{
+                display: none;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            #navMenu .divIcon{
+                margin-top: 10px;
+            }
+            #menuIcon {
+                display: block;
+            }
+
+            #menuIcon.active + #navMenu ,#navigation{
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                margin-top: 10px;
+
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav id="navigation">   
-                <div class="divIcon"><a href="about.html"><img id="informationIcon" src="src/lightInformation.png" alt="information icon"></a></div>
-                <div class="divIcon"><a href="index.html"><img id="homeIcon" src="src/lightHome.png" alt="home icon"></a></div>
-                <div class="divIcon"><img id="themeIcon" src="src/moonIcon.png" alt="theme icon"></div>
+    <nav id="navigation">
+        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/lightInformation.png" alt="information icon"></a></div>
+        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/lightHome.png" alt="home icon"></a></div>
+        <div class="divIcon desktopIcons" ><img id="themeIcon" src="src/moonIcon.png" alt="theme icon"></div>
+       
+        <div id="menuIcon">&#9776; Menu</div>
+        <div id="navMenu">
+            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/lightInformation.png" alt="information icon"></a></div>
+            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/lightHome.png" alt="home icon"></a></div>
+            <div class="divIcon"><img id="themeIconMobile" src="src/moonIcon.png" alt="theme icon" onclick="changeThemes()"></div>
+        </div>
     </nav>
     <div id="container">
-        <div><a href="page1.html">pagina 1</a> </div>
-        <div><a href="page2.html">pagina 2</a> </div>
-        <div><a href="page3.html">pagina 3</a> </div>
+        <a href="page1.html">pagina 1</a>
+        <a href="page2.html">pagina 2</a>
+        <a href="page3.html">pagina 3</a>
     </div>
-    
+    <script>
+        document.getElementById("menuIcon").addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    </script>
+
 </body>
 </html>
