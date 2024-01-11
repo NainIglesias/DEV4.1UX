@@ -12,3 +12,5 @@
 - [ ] Crea Navigation link (home, contact, about)
   
 #### Explicaion del proyecto
+
+El proyecto consiste en una página web sencilla, en la que se te expliquen tres tipos diferentes de monstruos de la saga de videojuegos Monster Hunter. El proyecto constará de 1 pantalla principal, donde se mostrarán 3 tarjetas con una breve explicación de los distintos tipos de monstruos y, al hacer click, te llevará a su respectiva página donde se explicará más en detalle.
