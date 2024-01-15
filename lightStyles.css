@@ -1,11 +1,12 @@
-html,a{
+html,a, .card{
     background-color: white;
     color:black;
 }
 
-#navigation{
+#navigation, #container{
      background-color: white;
 }
-#containe, #profile{
+
+#container, #profile, .card{
     border-color: black;
 }
