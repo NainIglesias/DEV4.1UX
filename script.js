@@ -8,43 +8,83 @@ const themeIconMobile = document.getElementById('themeIconMobile');
 const informationIconMobile = document.getElementById('informationIconMobile');
 const homeIconMobile = document.getElementById('homeIconMobile');
 
-// Cambio de light/dark themes
-function changeThemes(){
-    //alert("aaaaaaaaaaaa")
-    const newCss = colorCss.getAttribute('href') === 'darkStyles.css' ? 'lightStyles.css' : 'darkStyles.css';
-    colorCss.setAttribute('href', newCss);
-    const newThemeIcon =  themeIcon.getAttribute('src') === 'src/moonIcon.png' ? 'src/sunIcon.png':'src/moonIcon.png';
-    themeIcon.setAttribute('src',newThemeIcon);
-    const newInformationIcon =  informationIcon.getAttribute('src') === 'src/lightInformation.png' ? 'src/darkInformation.png':'src/lightInformation.png';
-    informationIcon.setAttribute('src',newInformationIcon);
-    const newHomeIcon =  homeIcon.getAttribute('src') === 'src/lightHome.png' ? 'src/darkHome.png':'src/lightHome.png';
-    homeIcon.setAttribute('src',newHomeIcon);
+// Obtener el valor actual de la variable desde localStorage
+let miVariable = obtenerValorVariable();
 
-    const newthemeIconMobile =  themeIconMobile.getAttribute('src') === 'src/moonIcon.png' ? 'src/sunIcon.png':'src/moonIcon.png';
-    themeIconMobile.setAttribute('src',newthemeIconMobile);
-    const newInformationIconMobile =  informationIconMobile.getAttribute('src') === 'src/lightInformation.png' ? 'src/darkInformation.png':'src/lightInformation.png';
-    informationIconMobile.setAttribute('src',newInformationIconMobile);
-    const newHomeIconMobile =  homeIconMobile.getAttribute('src') === 'src/lightHome.png' ? 'src/darkHome.png':'src/lightHome.png';
-    homeIconMobile.setAttribute('src',newHomeIconMobile);
+// Función para obtener el valor de la variable desde el archivo JSON
+function obtenerValorVariable() {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "config.json", true);
 
-}
-boton.addEventListener("click", changeThemes);
- // Peticiones a la API de monster hunter.
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://mhw-db.com/monsters");
-xhr.responseType = "json";
-let data; 
-xhr.onload = () => {
-  if (xhr.readyState == 4 && xhr.status == 200) {
-    data = xhr.response;
-    data.sort(function(a,b){
-        if(a.name > b.name){return 1;}
-        if(a.name < b.name){return -1;}
-        return 0;
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                const miVariable = data.miVariable !== undefined ? data.miVariable : false;
+                resolve(miVariable);
+            } else {
+                console.error("Error al cargar el archivo JSON.");
+                reject("Error al cargar el archivo JSON.");
+            }
+        };
+
+        xhr.send();
     });
-} else {
-    console.log(`Error: ${xhr.status}`);
 }
-};
-xhr.send();
-console.log(data);
+
+// Función para cambiar el valor de la variable y guardar en el archivo JSON
+function cambiarValorVariable() {
+    obtenerValorVariable().then((valorActual) => {
+        const nuevoValor = !valorActual;
+
+        // Guardar el nuevo valor en el archivo JSON
+        const nuevoData = { "miVariable": nuevoValor };
+        const nuevoDataString = JSON.stringify(nuevoData);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "config.json", true);  // Cambiamos a POST
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                localStorage.setItem('miVariable', nuevoValor);
+            } else {
+                console.error("Error al guardar el nuevo valor en el archivo JSON.");
+            }
+        };
+
+        xhr.send(nuevoDataString);
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+// Cambio de light/dark themes
+function changeThemes() {
+    const newCss = miVariable ? 'lightStyles.css' : 'darkStyles.css';
+    colorCss.setAttribute('href', newCss);
+    const newThemeIcon = !miVariable ? 'src/sunIcon.png' : 'src/moonIcon.png';
+    themeIcon.setAttribute('src', newThemeIcon);
+    const newInformationIcon = !miVariable ? 'src/darkInformation.png' : 'src/lightInformation.png';
+    informationIcon.setAttribute('src', newInformationIcon);
+    const newHomeIcon = !miVariable? 'src/darkHome.png' : 'src/lightHome.png';
+    homeIcon.setAttribute('src', newHomeIcon);
+
+    const newthemeIconMobile = !miVariable ? 'src/sunIcon.png' : 'src/moonIcon.png';
+    themeIconMobile.setAttribute('src', newthemeIconMobile);
+    const newInformationIconMobile = !miVariable ? 'src/darkInformation.png' : 'src/lightInformation.png';
+    informationIconMobile.setAttribute('src', newInformationIconMobile);
+    const newHomeIconMobile = !miVariable ? 'src/darkHome.png' : 'src/lightHome.png';
+    homeIconMobile.setAttribute('src', newHomeIconMobile);
+
+    console.log(miVariable);
+}
+changeThemes();
+
+boton.addEventListener("click", ()=>{
+cambiarValorVariable();
+changeThemes();
+});
+
+
+

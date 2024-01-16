@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkhana</title>
-    <script src="script.js" defer></script>
+    <script src="script.js" defer>
+    </script>
     <link rel="stylesheet" type="text/css" href="sizes.css">
     <link id="colorStylesCss" rel="stylesheet" type="text/css" href="lightStyles.css">
     <style>
@@ -56,6 +57,7 @@
     </style>
 </head>
 <body>
+ 
     <nav id="navigation">
         <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/lightInformation.png" alt="information icon"></a></div>
         <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/lightHome.png" alt="home icon"></a></div>
@@ -69,5 +71,10 @@
         </div>
     </nav>
     page 1
+    <script>
+        document.getElementById("menuIcon").addEventListener("click", function() {
+            this.classList.toggle("active");
+        });  
+    </script>
 </body>
 </html>
