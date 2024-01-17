@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teostra</title>
+    <title>Contact</title>
     <script type="module"  src="./hideMenu.js" ></script>
-    <link rel="stylesheet" type="text/css" href="sizes.css">
+    <link  rel="stylesheet" type="text/css" href="sizes.css">
     <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
+
     <style>
         #navigation {
             display: flex;
@@ -68,8 +68,30 @@
             <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
         </div>
     </nav>
-    page 2
+<div id="formContainer">
 
+    <form id="contactForm" action="#" method="post" onsubmit="enviarFormulario(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</div>
+
+    <script>
+        const enviarFormulario = (event) => {
+            event.preventDefault();
+            alert('Envío correcto');
+        }
+    </script>
+    
+    
 </body>
 </html>

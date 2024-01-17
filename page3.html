@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirin</title>
-    <script src="script.js" defer>
-        miVariable = obtenerValorVariable();
-
-    </script>
+    <script type="module"  src="./hideMenu.js" ></script>
     <link rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="lightStyles.css">
+    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
     <style>
         #navigation {
             display: flex;
@@ -59,17 +56,19 @@
 </head>
 <body>
     <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/lightInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/lightHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons" ><img id="themeIcon" src="src/moonIcon.png" alt="theme icon"></div>
+        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
+        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
+        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
        
         <div id="menuIcon">&#9776; Menu</div>
         <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/lightInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/lightHome.png" alt="home icon"></a></div>
-            <div class="divIcon"><img id="themeIconMobile" src="src/moonIcon.png" alt="theme icon" onclick="changeThemes()"></div>
+            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
+            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
+            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
         </div>
     </nav>
     page 3
+
+
 </body>
 </html>
