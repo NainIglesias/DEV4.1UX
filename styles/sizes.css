@@ -11,7 +11,7 @@ img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: top 0.3s;
 }
-#about{
+#about, #informacion {
     display: flex;
     justify-content: space-between; 
     flex-direction: column;
@@ -73,7 +73,7 @@ a {
   }
 
   .navbar-brand {
-    margin-right: auto; /* Empuja los elementos a la izquierda */
+    margin-right: auto; 
   }
 
   .navbar-nav {
@@ -89,7 +89,7 @@ a {
     height: auto;
 }
 
-#formContainer {
+#formContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,7 +99,7 @@ a {
     margin: auto;
     margin-top: 150px;
     padding: 10px;
-    box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+    box-sizing: border-box; 
 }
 
 form {
@@ -124,5 +124,51 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
-    width: 100%; /* Asegura que el botón ocupe el 100% del ancho del contenedor */
+    width: 100%; 
+}
+
+
+#navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#menuIcon {
+    display: none;
+    cursor: pointer;
+}
+
+#navMenu {
+    display: none;
+    margin-top: 10px;
+
+}
+
+#navMenu a {
+    margin-right: 20px; 
+}
+
+@media only screen and (max-width: 600px) {
+    .desktopIcons , #navMenu{
+        display: none;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #navMenu .divIcon{
+        margin-top: 10px;
+    }
+    #menuIcon {
+        display: block;
+    }
+
+    #menuIcon.active + #navMenu ,#navigation{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-top: 10px;
+
+    }
 }
