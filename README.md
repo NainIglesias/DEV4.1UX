@@ -41,4 +41,4 @@ La ley de la semejanza aplica que los elementos que comparten características i
 ---
 ### Ley de Fitts
 Esta ley se aplica más bien al diseño móvil. Lo que nos quiere decir es que tanto la distancia entre iconos, como el tamaño de estos; tiene que ser el indicado para evitar errores y adecuar el uso correcto de la web.
-![Menu móvil](/src/menuMovil.png.png)
+![Menu móvil](/src/menuMovil.png)
