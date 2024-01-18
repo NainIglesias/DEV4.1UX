@@ -120,12 +120,28 @@ textarea {
 
 button {
     padding: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
     cursor: pointer;
     width: 100%; 
-}
+    }
+
+    button:hover{
+        animation: parpadeo 1s infinite; 
+
+    }
+    @keyframes parpadeo {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
 
 #navigation {
