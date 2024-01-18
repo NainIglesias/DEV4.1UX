@@ -1,112 +1,137 @@
 <!DOCTYPE html>
 <html lang="en" id="html">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEV3.1 UX</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script type="module"  src="./hideMenu.js" ></script>
-    <link rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <style>
-        #navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        #menuIcon {
-            display: none;
-            cursor: pointer;
-        }
-
-        #navMenu {
-            display: none;
-            margin-top: 10px;
-
-        }
-
-        #navMenu a {
-            margin-right: 20px; 
-        }
-
-        @media only screen and (max-width: 600px) {
-            .desktopIcons , #navMenu{
-                display: none;
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #navMenu .divIcon{
-                margin-top: 10px;
-            }
-            #menuIcon {
-                display: block;
-            }
-
-            #menuIcon.active + #navMenu ,#navigation{
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                margin-top: 10px;
-
-            }
-        }
-    </style>
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script type="module" src="./Js/hideMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/sizes.css" />
+    <link
+      id="colorStylesCss"
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/darkStyles.css"
+    />
+  </head>
+  <body>
     <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-       
-        <div id="menuIcon">&#9776; Menu</div>
-        <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
-            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
+      <div class="divIcon desktopIcons">
+        <a href="about.html"
+          ><img
+            id="informationIcon"
+            src="src/darkInformation.png"
+            alt="information icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="index.html"
+          ><img id="homeIcon" src="src/darkHome.png" alt="home icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="contact.html">
+          <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+        /></a>
+      </div>
+
+      <div id="menuIcon">&#9776; Menu</div>
+      <div id="navMenu">
+        <div class="divIcon">
+          <a href="about.html"
+            ><img
+              id="informationIconMobile"
+              src="src/darkInformation.png"
+              alt="information icon"
+          /></a>
         </div>
+        <div class="divIcon">
+          <a href="index.html"
+            ><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="contact.html">
+            <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+          /></a>
+        </div>
+      </div>
     </nav>
 
     <div id="container" class="d-flex flex-wrap">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <a href="page1.html" class="card-link">
-            <div class="card mt-3 d-flex flex-column align-items-center" style="width: 18rem;">          
-                <img src="src/velkhana.png" class="card-img-top img-fluid" alt="velkhana" > 
+          <div class="card mt-3 d-flex flex-column align-items-center">
+            <img
+              src="src/velkhana.png"
+              class="card-img-top img-fluid"
+              alt="velkhana"
+            />
             <div class="card-body">
               <h5 class="card-title">Velkhana</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </a>
-      
-        <a href="page2.html" class="card-link">
-            <div class="card mt-3 d-flex flex-column align-items-center" style="width: 18rem;">          
-                  <img src="src/teostra.png" class="card-img-top img-fluid" alt="teostra">
-            <div class="card-body">
-              <h5 class="card-title">Teostra</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </a>
-      
-        <a href="page3.html" class="card-link">
-            <div class="card mt-3 d-flex flex-column align-items-center" style="width: 18rem;">          
-                <img src="src/kirin.png" class="card-img-top img-fluid" alt="kirin">
-            <div class="card-body">
-              <h5 class="card-title">Kirin</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">
+                Las escamas de su cuerpo poseen un hermoso brillo cristalino de
+                tonos azules y morados.
+              </p>
             </div>
           </div>
         </a>
       </div>
-    
-      
-      
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-</body>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="page2.html" class="card-link">
+          <div class="card mt-3 d-flex flex-column align-items-center">
+            <img
+              src="src/teostra.png"
+              class="card-img-top img-fluid"
+              alt="teostra"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Teostra</h5>
+              <p class="card-text">
+                Posee la estructura de un dragón, con cuatro patas armadas con
+                fuertes garras y dos grandes alas.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="page3.html" class="card-link">
+          <div class="card mt-3 d-flex flex-column align-items-center">
+            <img
+              src="src/kirin.png"
+              class="card-img-top img-fluid"
+              alt="kirin"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kirin</h5>
+              <p class="card-text">
+                El Kirin recuerda a un unicornio, posee un gran cuerno recto en
+                espiral en la cabeza que brilla intensamente.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

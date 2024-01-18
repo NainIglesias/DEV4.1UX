@@ -1,97 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-    <script type="module"  src="./hideMenu.js" ></script>
-    <link  rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
-
-    <style>
-        #navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        #menuIcon {
-            display: none;
-            cursor: pointer;
-        }
-
-        #navMenu {
-            display: none;
-            margin-top: 10px;
-
-        }
-
-        #navMenu a {
-            margin-right: 20px; 
-        }
-
-        @media only screen and (max-width: 600px) {
-            .desktopIcons , #navMenu{
-                display: none;
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #navMenu .divIcon{
-                margin-top: 10px;
-            }
-            #menuIcon {
-                display: block;
-            }
-
-            #menuIcon.active + #navMenu ,#navigation{
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                margin-top: 10px;
-
-            }
-        }
-    </style>
-</head>
-<body>
+    <script type="module" src="./Js/hideMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/sizes.css" />
+    <link
+      id="colorStylesCss"
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/darkStyles.css"
+    />
+  </head>
+  <body>
     <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-       
-        <div id="menuIcon">&#9776; Menu</div>
-        <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
-            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-        </div>
-    </nav>
-<div id="formContainer">
+      <div class="divIcon desktopIcons">
+        <a href="about.html"
+          ><img
+            id="informationIcon"
+            src="src/darkInformation.png"
+            alt="information icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="index.html"
+          ><img id="homeIcon" src="src/darkHome.png" alt="home icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="contact.html">
+          <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+        /></a>
+      </div>
 
-    <form id="contactForm" action="#" method="post" onsubmit="enviarFormulario(event)">
+      <div id="menuIcon">&#9776; Menu</div>
+      <div id="navMenu">
+        <div class="divIcon">
+          <a href="about.html"
+            ><img
+              id="informationIconMobile"
+              src="src/darkInformation.png"
+              alt="information icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="index.html"
+            ><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="contact.html">
+            <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+          /></a>
+        </div>
+      </div>
+    </nav>
+    <div id="formContainer">
+      <form
+        id="contactForm"
+        action="#"
+        method="post"
+        onsubmit="enviarFormulario(event)"
+      >
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" required />
 
         <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" required>
+        <input type="email" id="correo" name="correo" required />
 
         <label for="descripcion">Descripción:</label>
         <textarea id="descripcion" name="descripcion" required></textarea>
 
         <button type="submit">Enviar</button>
-    </form>
-
-</div>
+      </form>
+    </div>
 
     <script>
-        const enviarFormulario = (event) => {
-            event.preventDefault();
-            alert('Envío correcto');
-        }
+      const enviarFormulario = (event) => {
+        event.preventDefault();
+        alert("Envío correcto");
+      };
     </script>
-    
-    
-</body>
+  </body>
 </html>

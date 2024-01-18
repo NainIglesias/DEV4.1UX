@@ -1,75 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teostra</title>
-    <script type="module"  src="./hideMenu.js" ></script>
-    <link rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
-    <style>
-        #navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        #menuIcon {
-            display: none;
-            cursor: pointer;
-        }
-
-        #navMenu {
-            display: none;
-            margin-top: 10px;
-
-        }
-
-        #navMenu a {
-            margin-right: 20px; 
-        }
-
-        @media only screen and (max-width: 600px) {
-            .desktopIcons , #navMenu{
-                display: none;
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #navMenu .divIcon{
-                margin-top: 10px;
-            }
-            #menuIcon {
-                display: block;
-            }
-
-            #menuIcon.active + #navMenu ,#navigation{
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                margin-top: 10px;
-
-            }
-        }
-    </style>
-</head>
-<body>
+    <script type="module" src="./hideMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/sizes.css" />
+    <link
+      id="colorStylesCss"
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/darkStyles.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles/monsters.css" />
+  </head>
+  <body>
     <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-       
-        <div id="menuIcon">&#9776; Menu</div>
-        <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
-            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
+      <div class="divIcon desktopIcons">
+        <a href="about.html"
+          ><img
+            id="informationIcon"
+            src="src/darkInformation.png"
+            alt="information icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="index.html"
+          ><img id="homeIcon" src="src/darkHome.png" alt="home icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="contact.html">
+          <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+        /></a>
+      </div>
+
+      <div id="menuIcon">&#9776; Menu</div>
+      <div id="navMenu">
+        <div class="divIcon">
+          <a href="about.html"
+            ><img
+              id="informationIconMobile"
+              src="src/darkInformation.png"
+              alt="information icon"
+          /></a>
         </div>
+        <div class="divIcon">
+          <a href="index.html"
+            ><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="contact.html">
+            <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+          /></a>
+        </div>
+      </div>
     </nav>
-    page 2
-
-
-</body>
+    <div id="informacion">
+      <div id="nombre"><h1>Teostra</h1></div>
+      <div id="foto"><img src="./src/MHW_TEOSTRA.jpg" alt="teostra" /></div>
+      <div id="tipo"><h2>ANCIENT</h2></div>
+      <div id="informacionCombate">
+        <p>
+          Para atacar físicamente el Teostra utiliza embestidas y golpes de
+          garras, sin embargo, lo que más destaca de este monstruo es su uso de
+          polvos explosivos para atacar, primero los expande con sus alas y
+          luego los hace explotar al chasquear sus colmillos. Además también
+          puede envolverse durante un rato con un aura de fuego que drena la
+          salud de quien se acerque. También puede lanzar llamaradas que causan
+          un daño considerable.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

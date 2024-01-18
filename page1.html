@@ -1,75 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Velkhana</title>
-    <script type="module"  src="./hideMenu.js" ></script>
-    <link rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
-    <style>
-        #navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    <script type="module" src="./Js/hideMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/sizes.css" />
+    <link
+      id="colorStylesCss"
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/darkStyles.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles/monsters.css" />
 
-        #menuIcon {
-            display: none;
-            cursor: pointer;
-        }
-
-        #navMenu {
-            display: none;
-            margin-top: 10px;
-
-        }
-
-        #navMenu a {
-            margin-right: 20px; 
-        }
-
-        @media only screen and (max-width: 600px) {
-            .desktopIcons , #navMenu{
-                display: none;
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #navMenu .divIcon{
-                margin-top: 10px;
-            }
-            #menuIcon {
-                display: block;
-            }
-
-            #menuIcon.active + #navMenu ,#navigation{
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                margin-top: 10px;
-
-            }
-        }
-    </style>
-</head>
-<body>
- 
+  </head>
+  <body>
     <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-       
-        <div id="menuIcon">&#9776; Menu</div>
-        <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
-            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
+      <div class="divIcon desktopIcons">
+        <a href="about.html"
+          ><img
+            id="informationIcon"
+            src="src/darkInformation.png"
+            alt="information icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="index.html"
+          ><img id="homeIcon" src="src/darkHome.png" alt="home icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="contact.html">
+          <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+        /></a>
+      </div>
+
+      <div id="menuIcon">&#9776; Menu</div>
+      <div id="navMenu">
+        <div class="divIcon">
+          <a href="about.html"
+            ><img
+              id="informationIconMobile"
+              src="src/darkInformation.png"
+              alt="information icon"
+          /></a>
         </div>
+        <div class="divIcon">
+          <a href="index.html"
+            ><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="contact.html">
+            <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+          /></a>
+        </div>
+      </div>
     </nav>
-    page 1
-   
-</body>
+    <div id="informacion">
+      <div id="nombre"><h1>Velkhana</h1></div>
+      <div id="foto"><img src="./src/MHW_VELKHANA.png" alt="velka" /></div>
+      <div id="tipo"><h2>ANCIENT</h2></div>
+      <div id="informacionCombate">
+        <p>
+          Velkhana domina el control del hielo y los vientos helados, pudiendo
+          congelar cualquier cosa en un instante. Ataca principalmente con su
+          aliento de hielo, ya sea mediante rayos de hielo o creando espinas de
+          hielo de distintas formas que explotan al instante. También es capaz
+          de generar bloques de hielo en el aire que caen sobre los cazadores o
+          crear muros de hielo para limitar la movilidad, a veces también crea
+          plataformas de hielo que pueden usarse para saltar. 
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

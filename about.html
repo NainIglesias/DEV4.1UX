@@ -1,141 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <script type="module"  src="./hideMenu.js" ></script>
-    <link  rel="stylesheet" type="text/css" href="sizes.css">
-    <link id="colorStylesCss" rel="stylesheet" type="text/css" href="darkStyles.css">
+    <script type="module" src="./Js/hideMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/sizes.css" />
+    <link
+      id="colorStylesCss"
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/darkStyles.css"
+    />
+  </head>
+  <body>
+    <nav id="navigation">
+      <div class="divIcon desktopIcons">
+        <a href="about.html"
+          ><img
+            id="informationIcon"
+            src="src/darkInformation.png"
+            alt="information icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="index.html"
+          ><img id="homeIcon" src="src/darkHome.png" alt="home icon"
+        /></a>
+      </div>
+      <div class="divIcon desktopIcons">
+        <a href="contact.html">
+          <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+        /></a>
+      </div>
 
-    <style>
-        #navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        #menuIcon {
-            display: none;
-            cursor: pointer;
-        }
-
-        #navMenu {
-            display: none;
-            margin-top: 10px;
-
-        }
-
-        #navMenu a {
-            margin-right: 20px; 
-        }
-
-        @media only screen and (max-width: 600px) {
-            .desktopIcons , #navMenu{
-                display: none;
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            #navMenu .divIcon{
-                margin-top: 10px;
-            }
-            #menuIcon {
-                display: block;
-            }
-
-            #menuIcon.active + #navMenu ,#navigation{
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                margin-top: 10px;
-
-            }
-        }
-    </style>
-</head>
-<body>
-   <nav id="navigation">
-        <div class="divIcon desktopIcons"><a href="about.html"><img id="informationIcon" src="src/darkInformation.png" alt="information icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="index.html"><img id="homeIcon" src="src/darkHome.png" alt="home icon"></a></div>
-        <div class="divIcon desktopIcons"><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
-       
-        <div id="menuIcon">&#9776; Menu</div>
-        <div id="navMenu">
-            <div class="divIcon"><a href="about.html"><img id="informationIconMobile" src="src/darkInformation.png" alt="information icon"></a></div>
-            <div class="divIcon"><a href="index.html"><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"></a></div>
-            <div class="divIcon "><a href="contact.html"> <img id="themeIcon" src="src/darkContact.png" alt="theme icon"></a>  </div>
+      <div id="menuIcon">&#9776; Menu</div>
+      <div id="navMenu">
+        <div class="divIcon">
+          <a href="about.html"
+            ><img
+              id="informationIconMobile"
+              src="src/darkInformation.png"
+              alt="information icon"
+          /></a>
         </div>
+        <div class="divIcon">
+          <a href="index.html"
+            ><img id="homeIconMobile" src="src/darkHome.png" alt="home icon"
+          /></a>
+        </div>
+        <div class="divIcon">
+          <a href="contact.html">
+            <img id="themeIcon" src="src/darkContact.png" alt="theme icon"
+          /></a>
+        </div>
+      </div>
     </nav>
 
     <div id="about">
-        <div id="profileImage"><img id="imagenPerfil" alt="foto de perfil" src="https://avatars.githubusercontent.com/u/114144975?v=4"></div>
-        <div id="nombre">Nombre</div>
-        <div id="repositoryName">Cosas de prueba</div>
-        <div id="repositoryDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, incidunt culpa totam aperiam cumque expedita esse minus quia eveniet aliquam beatae repellat quis, fugiat officiis vitae, quaerat id molestiae est.</div>
-
+      <div id="profileImage">
+        <img
+          id="imagenPerfil"
+          alt="foto de perfil"
+          src="https://avatars.githubusercontent.com/u/114144975?v=4"
+        />
+      </div>
+      <div id="nombre">Nombre</div>
+      <div id="repositoryName">Cosas de prueba</div>
+      <div id="repositoryDescription">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur,
+        incidunt culpa totam aperiam cumque expedita esse minus quia eveniet
+        aliquam beatae repellat quis, fugiat officiis vitae, quaerat id
+        molestiae est.
+      </div>
     </div>
     <script>
+      const nombre = document.getElementById("nombre");
+      const imagenPerfil = document.getElementById("imagenPerfil");
+      const repositoryName = document.getElementById("repositoryName");
+      const repositoryDescription = document.getElementById(
+        "repositoryDescription"
+      );
 
+      const username = "NainIglesias";
+      const apiUrl = `https://api.github.com/users/${username}`;
 
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", apiUrl, true);
+      xhr.setRequestHeader("Accept", "application/vnd.github.v3+json");
 
-        const nombre = document.getElementById('nombre');
-const imagenPerfil = document.getElementById('imagenPerfil');
-const repositoryName = document.getElementById('repositoryName');
-const repositoryDescription = document.getElementById('repositoryDescription');
+      xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          const responseData = JSON.parse(xhr.responseText);
+          //console.log("respuesta", responseData);
 
+          fetch(responseData.repos_url)
+            .then((response) => response.json())
+            .then((reposData) => {
+              const nombreRepositorio = reposData[4].name;
+              const decripcionRepositorio = reposData[4].description;
 
-const username = 'NainIglesias';
-const apiUrl = `https://api.github.com/users/${username}`;
+              const miPersona = {
+                nombre: responseData.login,
+                foto: responseData.avatar_url,
+                nombreProyecto: nombreRepositorio,
+                descripcionProyecto: decripcionRepositorio,
+              };
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET', apiUrl, true);
-xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json'); 
+              //console.log(miPersona);
+              imagenPerfil.setAttribute("src", miPersona.foto);
+              nombre.textContent = miPersona.nombre;
+              repositoryName.textContent = miPersona.nombreProyecto;
+              repositoryDescription.textContent = miPersona.descripcionProyecto;
+            })
+            .catch((error) =>
+              console.error("Error al obtener repositorios:", error)
+            );
+        } else {
+          console.error("Error al realizar la solicitud:", xhr.statusText);
+        }
+      };
 
-xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      const responseData = JSON.parse(xhr.responseText);
-      //console.log("respuesta", responseData);
-  
-      fetch(responseData.repos_url)
-        .then(response => response.json())
-        .then(reposData => {
-  
-          const nombreRepositorio = reposData[4].name;
-            const decripcionRepositorio = reposData[4].description;
+      xhr.onerror = function () {
+        console.error("Error de red al realizar la solicitud.");
+      };
 
-          const miPersona = {
-            nombre: responseData.login,
-            foto: responseData.avatar_url,
-            nombreProyecto: nombreRepositorio,
-            descripcionProyecto: decripcionRepositorio
-          };
-  
-          //console.log(miPersona);
-          imagenPerfil.setAttribute('src',miPersona.foto);
-          nombre.textContent = miPersona.nombre;
-          repositoryName.textContent = miPersona.nombreProyecto;
-          repositoryDescription.textContent = miPersona.descripcionProyecto;
-
-        })
-        .catch(error => console.error("Error al obtener repositorios:", error));
-    } else {
-      console.error('Error al realizar la solicitud:', xhr.statusText);
-    }
-  };
-  
-
-xhr.onerror = function () {
-  console.error('Error de red al realizar la solicitud.');
-};
-
-xhr.send();
-
-
-
-      </script>
-    
-    
-</body>
+      xhr.send();
+    </script>
+  </body>
 </html>
