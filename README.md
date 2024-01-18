@@ -16,16 +16,16 @@ El proyecto consiste en una página web sencilla, en la que se te expliquen tres
 
 
 
-- [ ] [Principo de Pareto](#principo-de-pareto)
-- [ ] [Ley de la Semejanza](#ley-de-la-semejanza)
-- [ ] [Ley de Fitts](#ley-de-fitts)
+- [x] [Principo de Pareto](#principo-de-pareto)
+- [x] [Ley de la Semejanza](#ley-de-la-semejanza)
+- [x] [Ley de Fitts](#ley-de-fitts)
 
 ---
 ### Principo de Pareto
 El principio de Pareto postula que el 80% de los efectos surgen del 20% de las causas. Esto a la programación se aplica de manera que, la característica más importante tiene que ser la más accesible.
 Como es el caso de mi barra de navegación, la cual se puede acceder independientemente de en que parte de la web estés.
 
-![Barra de navegación](src/navBar.png)
+![Barra de navegación](/src/navBar.png)
 
 ---
 ### Ley de la Semejanza
@@ -41,8 +41,4 @@ La ley de la semejanza aplica que los elementos que comparten características i
 ---
 ### Ley de Fitts
 Esta ley se aplica más bien al diseño móvil. Lo que nos quiere decir es que tanto la distancia entre iconos, como el tamaño de estos; tiene que ser el indicado para evitar errores y adecuar el uso correcto de la web.
-<div>
-<p style = 'text-align:center;'>
-<img src="src/menuMovil.png" alt="menu movil">
-</p>
-</div>
+![Menu móvil](/src/menuMovil.png.png)
